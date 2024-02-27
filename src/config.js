@@ -1,26 +1,32 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
-// Updated Connection URI for MongoDB Atlas with the database name
-const uri = "mongodb+srv://viragtiwari200424:fu9q78LrIXlNYmyY@cluster0.ymhphrx.mongodb.net/wobble_data?retryWrites=true&w=majority&appName=Cluster0";
+// Use the environment variable for the MongoDB URI
+const uri = process.env.MONGODB_URI;
 
 // Connect to MongoDB Atlas
-const connect = mongoose.connect(uri, {
+mongoose.connect(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true
-});
-
-// Check database connected or not
-connect.then(() => {
+})
+.then(() => {
   console.log("Database Connected Successfully");
-}).catch((err) => {
+})
+.catch((err) => {
   console.log("Database cannot be Connected:", err);
 });
 
 // Define Schema
 const Loginschema = new mongoose.Schema({
-  name: {
+  user_name: {
     type: String,
-    required: true
+    required: true,
+    unique: true
+  
+  },
+  name : {
+    type: String,
+    required: true,
   },
   password: {
     type: String,
@@ -29,6 +35,6 @@ const Loginschema = new mongoose.Schema({
 });
 
 // Create Model for 'user' collection
-const collection = mongoose.model("user", Loginschema);
+const User = mongoose.model("User", Loginschema);
 
-module.exports = collection;
+module.exports = User;

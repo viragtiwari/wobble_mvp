@@ -611,8 +611,11 @@ section {
 }
 
 .search-form {
-  max-width: 700px; /* Slightly wider search form */
+  max-width: 1000px; /* Slightly wider search form */
   margin: auto;
+  position: relative;
+  top: 50px;
+
 }
 
 .search-form .input-group {
