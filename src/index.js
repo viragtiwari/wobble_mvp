@@ -21,17 +21,17 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
-app.get("/login", (req, res) => {
+app.get("/view/login", (req, res) => {
     res.render("login");
 });
 
-app.get("/signup", (req, res) => {
+app.get("/view/signup", (req, res) => {
     res.render("signup");
 });
 
 // Register User
 // Register User
-app.post("/signup", async (req, res) => {
+app.post("/view/signup", async (req, res) => {
     try {
         const data = {
             user_name: req.body.username,
@@ -53,7 +53,7 @@ app.post("/signup", async (req, res) => {
             await User.create(data);
 
             // Redirect the user to the login page after successful signup
-            return res.redirect("/login");
+            return res.redirect("/view/login");
         }
     } catch (error) {
         // Handle errors
@@ -63,7 +63,7 @@ app.post("/signup", async (req, res) => {
 });
 
 // Login user 
-app.post("/login", async (req, res) => {
+app.post("/view/login", async (req, res) => {
     try {
         const check = await User.findOne({ user_name: req.body.username });
         if (!check) {
