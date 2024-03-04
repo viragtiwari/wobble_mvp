@@ -1,4 +1,7 @@
-FROM vm/ubuntu:18.04# Set the working directory to /app
+# This is an example Layerfile configuration for a Node.js application
+FROM webapp.io/node:16
+
+# Set the working directory to /app
 WORKDIR /app
 
 # Copy your source code into the VM
