@@ -21,4 +21,4 @@ RUN npm install
 EXPOSE WEBSITE http://localhost:5000
 
 # Start your app using node
-CMD node src/index.js
+RUN BACKGROUND node src/index.js
