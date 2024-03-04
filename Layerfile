@@ -17,8 +17,8 @@ COPY . .
 # Install dependencies
 RUN npm install
 
-# Expose the port your app runs on
+# Expose the port your app runs on as a website
 EXPOSE WEBSITE http://localhost:5000
 
-# Start your app
-CMD ["npm", "start"]
+# Start your app using node
+CMD node src/index.js
