@@ -1,4 +1,4 @@
-# Set the working directory to /app
+FROM vm/ubuntu:18.04# Set the working directory to /app
 WORKDIR /app
 
 # Copy your source code into the VM
