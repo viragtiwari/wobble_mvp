@@ -31,11 +31,15 @@ const Loginschema = new mongoose.Schema({
   password: {
     type: String,
     required: true
+<<<<<<< HEAD
   },
  profile: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Profile'
  }
+=======
+  }
+>>>>>>> 18feb3a4c46be4ad57a928893b39f251b393cd27
 });
 
 // Create Model for 'user' collection

@@ -4,7 +4,10 @@
     "dotenv": "^16.4.5",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
+<<<<<<< HEAD
     "express-session": "^1.18.0",
+=======
+>>>>>>> 18feb3a4c46be4ad57a928893b39f251b393cd27
     "express.js": "^1.0.0",
     "http-server": "^14.1.1",
     "mongodb": "^6.3.0",
