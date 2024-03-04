@@ -1,5 +1,5 @@
 # This is an example Layerfile configuration for a Node.js application
-FROM webapp.io/node:16
+FROM node:16
 
 # Set the working directory to /app
 WORKDIR /app
@@ -10,8 +10,9 @@ COPY . .
 # Install dependencies
 RUN npm install
 
-# Expose the port your app runs on as a website
-EXPOSE WEBSITE http://localhost:5000
 
 # Run your app in the background
 RUN BACKGROUND node src/index.js
+
+# Expose the port your app runs on as a website
+EXPOSE WEBSITE http://localhost:5000
