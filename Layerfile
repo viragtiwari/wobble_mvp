@@ -1,12 +1,5 @@
-# This is an example webapp.io configuration for NodeJS
-FROM vm/ubuntu:20.04
-# To note: Layerfiles create VMs, *not* containers!
-
-# Install node
-RUN curl -sL https://deb.nodesource.com/setup_16.x | bash && \
-    apt-get install -y nodejs
-
-# If you use a different version of Node.js, change the setup_X.x to your version
+# This is an example Layerfile configuration for a Node.js application
+FROM webapp.io/node:16
 
 # Set the working directory to /app
 WORKDIR /app
@@ -20,5 +13,5 @@ RUN npm install
 # Expose the port your app runs on as a website
 EXPOSE WEBSITE http://localhost:5000
 
-# Start your app using node
+# Run your app in the background
 RUN BACKGROUND node src/index.js
